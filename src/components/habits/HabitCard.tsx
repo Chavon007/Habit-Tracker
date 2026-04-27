@@ -27,7 +27,7 @@ function HabitCard({ onDelete, onEdit, onToggle, habit }: HabitCardProps) {
   return (
     <div
       data-testid={`habit-card-${slug}`}
-      className="bg-zinc-900 border border-gray-800 rounded-2xl p-5 shadow-lg"
+      className="w-full bg-zinc-900 border border-gray-800 rounded-2xl p-5 shadow-lg"
     >
       <div>
         <section className="flex items-center justify-between mb-2">
@@ -36,7 +36,7 @@ function HabitCard({ onDelete, onEdit, onToggle, habit }: HabitCardProps) {
             data-testid={`habit-streak-${slug}`}
             className="text-yellow-500 text-sm font-semibold"
           >
-            🔥 {streak} day{streak !== 1 ? "s" : ""}
+            {streak} day{streak !== 1 ? "s" : ""}
           </p>
         </section>
 

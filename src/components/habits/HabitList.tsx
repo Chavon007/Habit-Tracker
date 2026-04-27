@@ -7,15 +7,20 @@ export function HabitList({
   onToggle,
   onDelete,
   onEdit,
+  onAdd
 }: HabitListProps) {
   if (habit.length === 0) {
     return (
-      <div>
-        <div>
-          <h4>No habits yet</h4>
-          <p>Start building your routine by adding your first habit</p>
-          <button>
-            <IoIosAdd /> Add habit
+      <div className="flex items-center justify-center min-h-[60vh] px-4">
+        <div className="w-full max-w-md text-center bg-zinc-900 border border-gray-800 rounded-2xl p-6 shadow-lg">
+          <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">
+            No habits yet
+          </h4>
+          <p className="text-gray-400 text-sm sm:text-base mb-4">
+            Start building your routine by adding your first habit
+          </p>
+          <button onClick={onAdd} className="flex items-center justify-center gap-2 mx-auto bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+            <IoIosAdd size={20} /> Add habit
           </button>
         </div>
       </div>
@@ -23,15 +28,17 @@ export function HabitList({
   }
 
   return (
-    <div>
-      <section>
-        <h4>Today's habits</h4>
-        <button>
-          <IoIosAdd /> Add habit
+    <div className="space-y-6">
+      <section className="flex items-center justify-between">
+        <h4 className="text-lg sm:text-xl font-semibold text-white">
+          Today's habits
+        </h4>
+        <button onClick={onAdd} className="flex items-center gap-2 bg-yellow-600 text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+          <IoIosAdd size={20} /> <span className="hidden sm:inline">Add habit</span>
         </button>
       </section>
 
-      <div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
         {habit.map((h) => (
           <HabitCard
             key={h.id}

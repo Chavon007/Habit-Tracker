@@ -26,4 +26,5 @@ export type HabitListProps = {
   habit: Habit[];
   onEdit: (habit: Habit) => void;
   onToggle: (habit: Habit) => void;
+  onAdd: () => void;
 };
