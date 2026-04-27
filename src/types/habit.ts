@@ -28,3 +28,8 @@ export type HabitListProps = {
   onToggle: (habit: Habit) => void;
   onAdd: () => void;
 };
+
+export type SideBarProps = {
+  activeView: "habits" | "streaks";
+  setActiveView: (v: "habits" | "streaks") => void;
+};

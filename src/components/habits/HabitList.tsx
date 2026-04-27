@@ -7,7 +7,7 @@ export function HabitList({
   onToggle,
   onDelete,
   onEdit,
-  onAdd
+  onAdd,
 }: HabitListProps) {
   if (habit.length === 0) {
     return (
@@ -19,7 +19,10 @@ export function HabitList({
           <p className="text-gray-400 text-sm sm:text-base mb-4">
             Start building your routine by adding your first habit
           </p>
-          <button onClick={onAdd} className="flex items-center justify-center gap-2 mx-auto bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+          <button
+            onClick={onAdd}
+            className="flex cursor-pointer items-center justify-center gap-2 mx-auto bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-500 transition"
+          >
             <IoIosAdd size={20} /> Add habit
           </button>
         </div>
@@ -33,12 +36,16 @@ export function HabitList({
         <h4 className="text-lg sm:text-xl font-semibold text-white">
           Today's habits
         </h4>
-        <button onClick={onAdd} className="flex items-center gap-2 bg-yellow-600 text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
-          <IoIosAdd size={20} /> <span className="hidden sm:inline">Add habit</span>
+        <button
+          onClick={onAdd}
+          className="flex cursor-pointer items-center gap-2 bg-yellow-600 text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-yellow-500 transition"
+        >
+          <IoIosAdd size={20} />{" "}
+          <span className="hidden sm:inline">Add habit</span>
         </button>
       </section>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      <div className="grid  gap-4 sm:grid-cols-2 md:grid-cols-1">
         {habit.map((h) => (
           <HabitCard
             key={h.id}
