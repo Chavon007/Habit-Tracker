@@ -1,3 +1,5 @@
+import { error } from "console";
+
 export const validateEmail = (email: string) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -24,3 +26,16 @@ export const validatePassword = (password: string) => {
     return { valid: false, error: "must be at least 6 characters", value: "" };
   return { valid: true, value: password, error: null };
 };
+
+export const validateHabitName = (name: string) => {
+  if (!name)
+    return {
+      valid: false,
+      error: "Habit name is needed",
+      value: "",
+    };
+
+  return { valid: true, value: name, error: null };
+};
+
+

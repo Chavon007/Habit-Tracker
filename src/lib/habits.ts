@@ -1,5 +1,6 @@
 import { Habit } from "@/types/habit";
-const toggleHabitCompletion = (habit: Habit, date: string): Habit => {
+import { HABITS_KEY } from "@/lib/constants";
+export  const toggleHabitCompletion = (habit: Habit, date: string): Habit => {
   //   unmark if date alreadyb exists
   if (habit.completions.includes(date)) {
     return {
@@ -15,4 +16,12 @@ const toggleHabitCompletion = (habit: Habit, date: string): Habit => {
   };
 };
 
-export default toggleHabitCompletion;
+export const getHabits = (): Habit[] => {
+  return JSON.parse(localStorage.getItem(HABITS_KEY) || "[]");
+};
+
+export const saveHabits = (habits: Habit[]) => {
+  localStorage.setItem(HABITS_KEY, JSON.stringify(habits));
+};
+
+

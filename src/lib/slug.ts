@@ -1,4 +1,4 @@
-const habitSlug = (name: string): string => {
+export const getHabitSlug = (name: string): string => {
   return name
     .toLowerCase()
     .trim()
@@ -6,4 +6,4 @@ const habitSlug = (name: string): string => {
     .replace(/[^a-z0-9-]/g, "");
 };
 
-export default habitSlug;
+

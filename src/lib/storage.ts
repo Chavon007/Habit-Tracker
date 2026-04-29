@@ -1,5 +1,6 @@
 import { User, Session } from "@/types/auth";
-import { USERS_KEY, SESSION_KEY, HABITS_KEY } from "@/lib/constants";
+
+import { USERS_KEY, SESSION_KEY } from "@/lib/constants";
 export const getUsers = (): User[] => {
   return JSON.parse(localStorage.getItem(USERS_KEY) || "[]");
 };
